@@ -1,0 +1,184 @@
+/* 🌸 General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffe6f0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* 📦 Container */
+.container {
+    width: 500px;
+    height: 360px;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: height 1s ease-in-out;
+}
+
+/* 💖 Title */
+.title {
+    font-size: 24px;
+    color: #ff4081;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* 💌 Envelope */
+.envelope {
+    width: 180px;
+    height: 120px;
+    position: relative;
+    margin: 0 auto;
+    transition: transform 1s ease-in-out;
+    z-index: 2;
+}
+
+/* ✉️ Envelope Flap */
+.flap {
+    width: 0;
+    height: 0;
+    border-left: 90px solid transparent;
+    border-right: 90px solid transparent;
+    border-bottom: 60px solid #ff4081;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.8s ease-in-out;
+    z-index: 3;
+}
+
+/* 📩 Envelope Body */
+.body {
+    width: 180px;
+    height: 100px;
+    background-color: #ff6699;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 5px;
+    z-index: 2;
+}
+
+/* 🎀 Open Button */
+.open_button {
+    margin-top: 130px;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #ff4081;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.open_button:hover {
+    background: #e03570;
+    transform: scale(1.1);
+}
+
+/* 📜 Letter Styling (Upgraded) */
+.letter {
+    width: 460px;
+    height: 220px;
+    background: linear-gradient(to bottom, #fff8fb, #ffebf3); /* Soft gradient background */
+    border: 3px solid #ff4081;
+    border-radius: 12px;
+    padding: 25px;
+    margin-top: 20px;
+    box-shadow: 0px 6px 15px rgba(255, 64, 129, 0.4);
+    font-size: 18px;
+    line-height: 1.8;
+    text-align: left;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease-in-out;
+    font-family: 'Poppins', sans-serif;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    visibility: hidden;
+}
+
+/* 🌸 Letter Text Styling */
+.letter_text {
+    font-style: italic;
+    color: #444;
+    margin-top: 0px; /* Ensure text starts at the top */
+    padding-top: -2px; /* Slight adjustment */
+}
+
+/* 💕 Cute Floating Hearts Decoration */
+.letter::after {
+    content: "💖 💌 💕";
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    font-size: 20px;
+    opacity: 0.7;
+    animation: floatHearts 4s infinite alternate ease-in-out;
+}
+
+/* ✨ Floating Hearts Animation */
+@keyframes floatHearts {
+    from { transform: translateY(0); }
+    to { transform: translateY(-5px); }
+}
+
+/* 💞 Hug Button */
+.hug_button {
+    display: none;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #ff4081;
+    color: white;
+    transition: all 0.3s ease;
+    margin: 20px auto 0;
+}
+
+.hug_button:hover {
+    background: #e03570;
+    transform: scale(1.1);
+}
+
+/* 💌 Envelope Opens & Disappears, Letter Moves Up */
+.open .flap {
+    transform: rotateX(180deg);
+}
+
+.open .body {
+    transform: translateY(-80px);
+}
+
+/* Envelope disappears when opened */
+.open .envelope {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Letter Moves to Center */
+.open .letter {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-120px);
+    visibility: visible;
+}
+
+/* Show Hug Button */
+.open .hug_button {
+    display: block;
+    opacity: 1;
+}

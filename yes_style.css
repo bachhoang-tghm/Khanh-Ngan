@@ -1,0 +1,133 @@
+/* 🌸 General Page Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffe6f0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* 🌟 Header Text & Fade-in Effect */
+.header_text {
+    font-size: 24px;
+    color: #ff4081;
+    font-weight: bold;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.sub_text {
+    font-size: 16px;
+    color: #333;
+    margin-top: 15px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* 💌 Mailbox */
+.mailbox {
+    position: relative;
+    width: 160px;
+    height: 200px;
+    margin: 20px auto;
+}
+
+/* 🏠 Mailbox Lid */
+.mailbox-lid {
+    width: 160px;
+    height: 50px;
+    background-color: #ff6699;
+    border-radius: 10px 10px 0 0;
+    position: absolute;
+    top: 0;
+    transition: transform 0.6s ease-in-out;
+}
+
+/* Open animation for mailbox lid */
+.open-lid {
+    transform: rotateX(140deg);
+}
+
+/* 📦 Mailbox Body */
+.mailbox-body {
+    width: 160px;
+    height: 150px;
+    background-color: #ff4081;
+    border-radius: 0 0 10px 10px;
+    position: absolute;
+    bottom: 0;
+}
+
+/* ✉️ Letter Inside */
+.mailbox-letter {
+    width: 110px;
+    height: 80px;
+    background: white;
+    position: absolute;
+    bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+    font-size: 30px;
+    line-height: 80px;
+    text-align: center;
+    transition: transform 1.2s ease-in-out;
+}
+
+/* 📩 Letter slides out smoothly */
+.slide_out {
+    transform: translateY(-180px);
+}
+
+/* 💕 Button */
+.take_letter_button {
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #ff4081;
+    color: white;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+}
+
+.take_letter_button:hover {
+    transform: scale(1.1);
+    background: #e03570;
+}
+
+/* ✨ Fade-in Effect */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 👻 Hide Elements Initially */
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+}
+
+/* 🌟 Fade-in for Elements */
+.fade-in {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* 💖 Heart Confetti Animation */
+.heart {
+    position: fixed;
+    bottom: 0;
+    font-size: 20px;
+    color: #ff4081;
+    animation: floatHearts 5s linear infinite;
+}
+
+@keyframes floatHearts {
+    0% { transform: translateY(0) scale(0.8); opacity: 1; }
+    100% { transform: translateY(-100vh) scale(1.2); opacity: 0; }
+}
